@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
+  
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,22 +10,26 @@
 </head>
 <html lang="en-US">
 <body>
-    <header class="header">
-        <ul>
-          <a href="about.html" title="Learn more about me">About Me</a>
-          <a href="blog.html" title="Read my blog">Blog</a>
-          <a href="index.html">Home</a>
-        </ul>
-      </header>
-<div id="body">
-<h1 class="title">Sharafath </h1>
-<br>
-<img class="logo" src="sharafath.png" alt="My pfp" width="250" height="250">
-<p class="intro">Welcome to my personal website. My name is <cyan>Sharafath</cyan>, and I am currently pursuing a degree in computer engineering. On this site, I will share my experiences, insights, and projects with others who are interested in this fascinating field. Whether you are a fellow student or simply someone who is curious about the latest developments in the tech industry, I believe that this site has something to offer. As a learner and aspiring professional, I hope that this website will serve as a valuable resource for those interested in expanding their knowledge and understanding of the subject. I welcome the opportunity to connect with like-minded individuals and share my journey as a student and future member of the tech industry.</p>
-<h2 class="subhead">Social</h2>
-<!-- <a href="#" class="fa fa-linkedin"></a> -->
-<h3 class="social">Linkedin:&nbsp <a href="https://www.linkedin.com/in/mohamed-sharafath-shahul-hameed-670090213/" target="_blank"title="View my Linkedin">Mohamed Sharafath</a></h3>
-<h3 class="social">Email:&nbsp<a href="mailto:Sharafath2001@hotmail.com"target="_blank"title="Send an Email">Sharafath2001@hotmail.com<a></h3></social-list>
-</div>
+<div> 
+    <video id="bg-video" loop autoplay>
+      <source src="video.mp4" type="video/mp4">  
+  </video>
+  <button id="enter-button">Enter</button>
+    
+  </div>
+<script>
+  var enterButton = document.getElementById("enter-button");
+  enterButton.addEventListener("click", function() {
+  window.location.href = "home.html";
+  });
+  var video = document.getElementById("bg-video");
+  video.muted = true;
+  video.play()
+  setTimeout(function(){
+    enterButton.addEventListener("click", function() {
+    window.location.href = "index.html";
+    });
+  }, 5000); 
+  </script>
 </body>
 </html>
