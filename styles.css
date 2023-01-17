@@ -40,16 +40,18 @@ cyan {
   font-family:courier;
   font-size: 150%;
 }
+.link{
+  color:white;
+  font-size: 150%;
+}
+.link :hover{
+  color: rgb(8, 202, 245);
+  text-decoration:none;
+}
 .social {
   color:white;
   font-size: 150%;
 }
-a:Link {
-  color: rgb(8, 202, 245);
-  text-decoration:none;
-    }
-
-
 .header {
   overflow: hidden;
   padding: 5px;
@@ -78,7 +80,7 @@ a:Link {
   color: rgb(255, 255, 255);
 }
 
-#enter-button{
+#enter-button {
   text-align: center;
   align-items: center;
   font-size: 24px;
@@ -94,7 +96,12 @@ a:Link {
   margin-top: 20px;
   position: absolute;
 }
-
+#enter-button:hover {
+  background-color: transparent; /* change the background color on hover */
+  color: rgb(0, 255, 255); /* change the text color on hover */
+  border: 2px solid rgb(0, 255, 255);
+  cursor: pointer; /* change the cursor to a pointer on hover */
+}
 #bg-video {
   position: absolute;
   top: 0;
@@ -103,4 +110,19 @@ a:Link {
   min-height: 100%;
   z-index: -1;
   }
+.HA {
+  display: block;
+  width:"250";
   
+  height:"250";
+}
+.text{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: white;
+  font-size: 150%;
+}
+.flowchart {
+  float: left;
+  width: 250px;
+  margin-right: 20px;
+}
