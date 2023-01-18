@@ -29,6 +29,7 @@ cyan {
   color:white;
   font-size: 220%;
 }
+
 .list-head {
   font-family: sans-serif;
   color: white;
@@ -41,8 +42,10 @@ cyan {
   font-size: 150%;
 }
 .link{
-  color:white;
-  font-size: 150%;
+  font-size: 40px; 
+  font-weight: bold; 
+  text-decoration: none; 
+  color: rgb(255, 255, 255); 
 }
 .link :hover{
   color: rgb(8, 202, 245);
@@ -126,3 +129,65 @@ cyan {
   width: 250px;
   margin-right: 20px;
 }
+.date{
+  font-family:courier;
+  color: white;
+  font-size: 100%;
+}
+
+.img {
+  display: block;
+  width:"250";
+  max-width:50%;
+  max-height:50%;
+  height:"250";
+}
+
+.timeline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.phase {
+  float: left;
+    width: 25%; /* adjust as needed */
+}
+
+.phase h3 {
+  font-size: 20px;
+  color: #0ff;
+  margin-bottom: 10px;
+}
+
+.phase ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.phase li {
+  font-size: 17px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.phase li span {
+  font-size: 14px;
+  color: #fff;
+  font-style: italic;
+  margin-left: 10px;
+}
+.table{
+  color: #fff;
+  padding-right: 600px;
+  border-spacing: 10px;
+}
+
+pre {
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
+
