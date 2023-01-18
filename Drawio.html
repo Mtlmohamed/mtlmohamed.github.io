@@ -17,6 +17,9 @@
           </ul>
       </header>
 
+
+<div id="body">
+
 <h1 class="title">Draw <cyan>IO</cyan> </h1>
 <div id="body">
 <h4 class="text">Introducing <cyan> Draw IO</cyan>, a cutting-edge drawing robot that allows users to bring their creative visions to life. With its precise movement controls, 3D rotation capabilities, and versatile servo motor, Draw IO empowers users to create intricate designs with ease. Whether you're an artist, designer, or hobbyist, Draw IO is the perfect tool for turning your ideas into reality.</h4>
@@ -67,22 +70,22 @@
 <h3 class="subhead">Build Of Materials</h3>
 <table id="body" class="table">
     <tr>
-      <th>Name</th>
-      <th>Unit price($)</th>
-      <th>Qty</th>
-      <th>Price($)</th>
+        <th>Name</th>
+        <th>Unit price($)</th>
+        <th>Qty</th>
+        <th>Price($)</th>
     </tr>
     <tr>
-      <td>Lithium Ion</td>
-      <td>5</td>
-      <td>3</td>
-      <td>15</td>
+        <td>Lithium Ion</td>
+        <td>5</td>
+        <td>3</td>
+        <td>15</td>
     </tr>
     <tr>
-      <td>Sharpy</td>
-      <td>2</td>
-      <td>3</td>
-      <td>6</td>
+        <td>Sharpy</td>
+        <td>2</td>
+        <td>3</td>
+        <td>6</td>
     </tr>
     <tr>
         <td>Battery holder</td>
@@ -198,17 +201,17 @@
         <td></td>
         <td>262.42$</td>
     </tr>
-  </table>
-  <h3 class="subhead">Schematic</h3>
-  <h4 class="text">The below schematic illustrates the component connections utilized in the Draw IO system. It features a L7805 voltage regulator, two motor drivers for controlling the stepper motor, which is connected to the ESP32 microcontroller, as well as two JST headers. Additionally, the schematic includes a pinout for the servo motor and a screw terminal for the input power, which is connected to a switch and additional pin headers for versatile creative implementation. The ESP32 microcontroller is utilized to connect and control the two stepper motors and a servo motor. </h4>
-  <img class="HA" src="Pictures/schematic.png">
-  <h3 class="subhead">Design PCB</h3>
-  <img class="HA" src="Pictures/pcb.png">
-  <h3 class="subhead">Harware</h3>
-  <h4 class="text">I procured all necessary mechanical components for the project, including an ESP32 microcontroller, motor drivers, stepper motors, capacitors, switch, voltage regulator, screw terminals, socket headers, a servo motor, wiring, stepper brackets, couplers, acrylic materials, and 3D printed components. I also acquired Lithium-Ion batteries, standoffs, and various sizes of M3 and M4 screws. </h4>
-  <h3 class="subhead">Testing</h3>
-  <h4 class="text">I successfully implemented stepper motor functionality in the prototype by programming the ESP32 microcontroller to control the motor drivers and interfacing with the stepper motors via GPIO pins.</h4>
-  <video width="320" height="240" controls>
+    </table>
+    <h3 class="subhead">Schematic</h3>
+    <h4 class="text">The below schematic illustrates the component connections utilized in the Draw IO system. It features a L7805 voltage regulator, two motor drivers for controlling the stepper motor, which is connected to the ESP32 microcontroller, as well as two JST headers. Additionally, the schematic includes a pinout for the servo motor and a screw terminal for the input power, which is connected to a switch and additional pin headers for versatile creative implementation. The ESP32 microcontroller is utilized to connect and control the two stepper motors and a servo motor. </h4>
+    <img class="HA" src="Pictures/schematic.png">
+    <h3 class="subhead">Design PCB</h3>
+    <img class="HA" src="Pictures/pcb.png">
+    <h3 class="subhead">Harware</h3>
+    <h4 class="text">I procured all necessary mechanical components for the project, including an ESP32 microcontroller, motor drivers, stepper motors, capacitors, switch, voltage regulator, screw terminals, socket headers, a servo motor, wiring, stepper brackets, couplers, acrylic materials, and 3D printed components. I also acquired Lithium-Ion batteries, standoffs, and various sizes of M3 and M4 screws. </h4>
+    <h3 class="subhead">Testing</h3>
+    <h4 class="text">I successfully implemented stepper motor functionality in the prototype by programming the ESP32 microcontroller to control the motor drivers and interfacing with the stepper motors via GPIO pins.</h4>
+    <video width="320" height="240" controls>
     <source src="Pictures/testing.mp4" type="video/mp4"></video>
 <h4 class="text">To assemble the Drawbot, I began by attaching the stepper motors to the brackets using the couplers. Next, I mounted the servo motor to the base of the robot and connected it to the ESP32 microcontroller. I then connected the motor drivers to the stepper motors and the ESP32, ensuring a secure and stable connection. After that, I assembled the voltage regulator and the screw terminal, and wired them to the power input switch. I also connected the socket headers and the wire connections to the ESP32. Finally, I mounted the acrylic and 3D printed parts on the robot and connected the Lithium-Ion batteries to the battery holder. The robot was now ready for testing and final adjustments. </h4>
 <video width="320" height="240" controls>
@@ -268,7 +271,7 @@ def MvRMotor(steps, speed, Dir):
         sleep_us(speed)
     # Disable the coil after the step is executed
     M2RSTEP.value(Low)            # Disable the coil after the step is executed
-       
+        
     
 '''Define the steps and the speeds for the left motor'''
 def MvLMotor(steps, speed, Dir):
@@ -281,7 +284,7 @@ def MvLMotor(steps, speed, Dir):
         M1LSTEP.value(Low)        #Step is LOW
         sleep_us(speed)
     M1LSTEP.value(Low)            # Disable the coil after the step is executed    
-           
+            
 
 
 '''Going Forward with the robot'''
@@ -306,7 +309,7 @@ def TurnRight(Distance):
     for i in range(Steps_Convertion):
         MvLMotor(High, 5000, CCW)
         MvRMotor(High, 5000, CCW)
-     
+        
 '''Turn Left with the robot'''
 def TurnLeft(Distance):
     Step_per_mm = F_step / Circ_wheel                #Ratio of the step 0.979 steps/mm
@@ -334,9 +337,9 @@ def SharpieUp():
     servo.duty(30)
 </code>
 </pre>    
-<a class="social" href="CodeExamples.html" >Example of Drawings</a> 
+<a class="social" href="Example.html" >Example of Drawings</a>
 <h3 class="subhead">Product Diagram</h3>
-  <img class="HA" src="Pictures/diagram.png">
+    <img class="HA" src="Pictures/diagram.png">
 <h4 class="text">The image above displays a diagram which shows the component of the robot. The robot has a PCB board which is the main circuitry for the robot to function, 1-point fins Sharpy, 1 Battery holder which has 3 slots for batteries, 2 Ball caster, 2 Wheels, 2 stepper motors with 2 brackets, 1 servo motor, 1 custom 3D printed Servo holder and 1 3D printed pend holder and 2 3D printed for the movement of the servo and the Pen.</h4>
 <h3 class="subhead">Product Usage</h3>  
 <h3 class="text">Powering ON/OFF</h3>
@@ -368,5 +371,6 @@ def SharpieUp():
 </ul>
 <h4 class="text">This Robot is intended for people who would like to advance their experience in Engineering. Kids will thing is their regular toy, therefore, their possibility they can put the power cable on the mouth or chew on the wire. Most components are very small, if swollen, call for emergency (911) immediately. Also, there a possibility it can electrocute if not taken properly. Therefore, avoid any contact with children. In addition, the motor driver and stepper get hot during the process of the robot. Avoid any skin contact on theses part. Turn off the switch after usage. </h4>
 </div>
+
 </body>
 </html>
