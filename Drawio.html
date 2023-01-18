@@ -221,7 +221,120 @@
 
 <h3 class="subhead">MycroPython Code</h3>
 <h4 class="text">Stepper Code</h4>
+<pre id="code-block"><code class="language-micropython">
+<h5>from machine import Pin     #import pin module for esp32
+import time
+from time import sleep_us   #import delay in us time.sleep_us(1000)  Delay for 1ms
+#from time import sleep_ms   #import delay in ms
+from Servo import*
+#from machine.stepper import Stepper
 
+# Set up the stepper motor with the appropriate number of steps per revolution
+# and the appropriate pins for controlling the stepper motor
+#stepper = Stepper(200, Pin(0), Pin(2), Pin(4), Pin(5))
+'''
+The Movement of the robot
+The ciconference of the wheel is 65mm diameter
+Funnction: π *Diameter= π*54=204.2mm
+Steps per revolution is 200 steps
+So for 200steps the Ratio of steps is 200/204.2= 0.979 steps/mm
+If we want a certain direction, we just need to do distance * 0.979 steps/mm
+In simple term, This formula converts the distance in millimeters to the number of steps required 
+to move that distance based on the ratio of steps per millimeter specified in the code as 0.979 steps/mm
+'''
+
+''' Implementing Macros'''
+CW = 1                  #clockwise
+CCW = 0                 #anti-clockwise
+High = 1
+Low = 0
+F_step = 200            #step per revolution
+Circ_wheel = 204.2      #circonference of the wheel
+
+
+''' Assigning the output For the motor driver and esp32'''
+M2RDir = Pin(33, Pin.OUT)   #Direction pin to GPIO33
+M2RSTEP = Pin(25, Pin.OUT)  #Step pin to GPIO23
+M1LDir = Pin(27, Pin.OUT)   #Direction pin to GPIO27
+M1LSTEP = Pin(26, Pin.OUT)  #Step pin to GPIO26
+
+'''Define the steps and the speeds for the right motor'''
+def MvRMotor(steps, speed, Dir):
+    if Dir == CCW or Dir == CW:       #If Dir is = 0 or 1
+        M2RDir.value(Dir)         #Set Dir to CW or to CCW 
+        
+    for i in range(steps):            #Step for the number of specified steps
+        M2RSTEP.value(High)       #Step is HIGH
+        sleep_us(speed)
+        M2RSTEP.value(Low)        #Step is LOW
+        sleep_us(speed)
+    # Disable the coil after the step is executed
+    M2RSTEP.value(Low)            # Disable the coil after the step is executed
+        
+    
+'''Define the steps and the speeds for the left motor'''
+def MvLMotor(steps, speed, Dir):
+    if Dir == CCW or Dir == CW:       #If Dir is = 0 or 1
+        M1LDir.value(Dir)         #Set Dir to CW or to CCW 
+        
+    for i in range(steps):            #Stepa for the number of specified steps
+        M1LSTEP.value(High)       #Step is HIGH
+        sleep_us(speed)
+        M1LSTEP.value(Low)        #Step is LOW
+        sleep_us(speed)
+    M1LSTEP.value(Low)            # Disable the coil after the step is executed    
+            
+
+
+'''Going Forward with the robot'''
+def Forward(Distance):
+    Step_per_mm = F_step / Circ_wheel                #Ratio of the step 0.979 steps/mm
+    Steps_Convertion = round(Distance * Step_per_mm) #convert to integer value
+    for i in range(Steps_Convertion):
+        MvLMotor(High, 5000, CCW)
+        MvRMotor(High, 5000, CW)
+'''Going Backward with the robot'''
+def Backward(Distance):
+    Step_per_mm = F_step / Circ_wheel                #Ratio of the step 0.979 steps/mm
+    Steps_Convertion = round(Distance * Step_per_mm) #convert to integer value
+    for i in range(Steps_Convertion):
+        MvLMotor(High, 5000, CW)
+        MvRMotor(High, 5000, CCW)
+        
+'''Turn Right with the robot'''
+def TurnRight(Distance):
+    #Step_per_mm = F_step / Circ_wheel                #Ratio of the step 0.979 steps/mm
+    Steps_Convertion = round(Distance * 0.979) #convert to integer value
+    for i in range(Steps_Convertion):
+        MvLMotor(High, 5000, CCW)
+        MvRMotor(High, 5000, CCW)
+        
+'''Turn Left with the robot'''
+def TurnLeft(Distance):
+    Step_per_mm = F_step / Circ_wheel                #Ratio of the step 0.979 steps/mm
+    Steps_Convertion = round(Distance * Step_per_mm) #convert to integer value
+    for i in range(Steps_Convertion):
+        MvLMotor(High, 5000, CW)
+        MvRMotor(High, 5000, CW)
+        
+    </code>
+</pre>
+<h4 class="text">Servo Code</h4>
+<pre id="code-block"><code class="language-micropython">
+from machine import Pin, PWM
+
+
+servo = PWM(Pin(0), freq=50)  #set pwm and pin 
+
+
+
+def SharpieDown(): #20 duty cycle is 180 degree
+    servo.duty(18) 
+    
+def SharpieUp():
+    servo.duty(30)</h5>
+</code>
+</pre>  
 <a class="social" href="Example.html" >Example of Drawings</a>
 <h3 class="subhead">Product Diagram</h3>
     <img class="HA" src="Pictures/diagram.png">
