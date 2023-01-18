@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="Pictures/icon.png">
+    <link rel="stylesheet" href="prism.css">
+    <script src="prism.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+<title>Sharafath</title>
+</head>
+<html lang="en-US">
+<body>
+    <header class="header">
+        <ul>
+            <a href="about.html" title="Learn more about me">About Me</a>
+            <a href="blog.html" title="Read my blog">Blog</a>
+            <a href="home.html"title="Go back to the homepage">Home</a>
+          </ul>
+      </header>
+
+<h1 class="title">Draw <cyan>IO</cyan> </h1>
+<div id="body">
+<h4 class="text">Example of Code for drawings of the robots</h4>
+
+<h4 class="text">Servo Code</h4>
+<pre id="code-block"><code class="language-micropython">
+<link rel="stylesheet" href="prism.css"> 
+'''Draw a zero'''
+def DrawZero():
+    SharpieDown()
+    TurnRight(90)
+    Forward(20)
+    TurnRight(90)
+    Forward(30)
+    TurnRight(90)
+    Forward(20)
+    TurnRight(90)
+    Forward(30)
+    SharpieUp()
+
+'''Draw a one'''
+def DrawOne():
+    SharpieDown()
+    Forward(20)
+    SharpieUp()
+    TurnRight(90)
+    Forward(30)
+
+'''Draw a two'''
+def DrawTwo():
+    SharpieDown()
+    Forward(20)
+    TurnRight(90)
+    Forward(30)
+    TurnRight(90)
+    Forward(20)
+    SharpieUp()
+    TurnRight(180)
+    Forward(20)
+    SharpieDown()
+    TurnRight(90)
+    Forward(30)
+
+'''Draw a three'''
+def DrawThree():
+    SharpieDown()
+    Forward(20)
+    TurnRight(90)
+    Forward(30)
+    TurnRight(90)
+    Forward(20)
+    SharpieUp()
+    TurnRight(180)
+    Forward(20)
+    SharpieDown()
+    TurnRight(90)
+    Forward(15)
+    SharpieUp()
+    TurnRight(90)
+    Forward(20)
+    SharpieDown()
+    TurnRight(90)
+    Forward(15)
+
+'''Draw a four'''
+def DrawFour():
+    SharpieDown()
+    Forward(20)
+    SharpieUp()
+    TurnRight(90)
+    Forward(15)
+    SharpieDown()
+    TurnRight(90)
+    Forward(20)
+    SharpieUp()
+    TurnRight(180)
+    Forward(10)
+    SharpieDown()
+    TurnRight(90)
+    Forward(30)
+
+'''Draw a five'''
+def DrawFive():
+    SharpieDown()
+    Forward(20)
+    TurnRight(90)
+    Forward(30)
+    TurnRight(90)
+    Forward(20)
+    SharpieUp()
+    TurnRight(180)
+    Forward(10)
+    SharpieDown()
+    TurnRight(90)
+    Forward(15)
+    SharpieUp()
+    TurnRight(90)
+    Forward(10)
+    SharpieDown()
+    TurnRight(90)
+    Forward(15)
+
+'''Draw a six'''
+def DrawSix():
+    SharpieDown()
+    Forward(20)
+    TurnRight(90)
+    Forward(30)
+    TurnRight(90)
+    Forward(20)
+    SharpieUp()
+    TurnRight(180)
+    Forward(20)
+    SharpieDown()
+    TurnRight(90)
+    Forward(15)
+    SharpieUp()
+    TurnRight(90)
+    Forward(10)
+    SharpieDown()
+    TurnRight(90)
+    Forward(15)
+
+'''Draw a seven'''
+def DrawSeven():
+    SharpieDown()
+    Forward(20)
+    TurnRight(90)
+    Forward(30)
+    SharpieUp()
+    TurnRight(135)
+    Forward(24)
+
+'''Draw an eight'''
+def DrawEight():
+    SharpieDown()
+    Forward(20)
+    TurnRight(90)
+    Forward(30)
+    TurnRight(90)
+    Forward(20)
+    TurnRight(90)
+    Forward(30)
+    SharpieUp()
+    TurnRight(180)
+    Forward(20)
+    SharpieDown()
+    TurnRight(90)
+    Forward(15)
+    SharpieUp()
+    TurnRight(90)
+    Forward(10)
+    SharpieDown()
+    TurnRight(90)
+    Forward(15)
+
+'''Draw a nine'''
+def DrawNine():
+    SharpieDown()
+    Forward(20)
+    TurnRight(90)
+    Forward(30)
+    TurnRight(90)
+    Forward(20)
+    SharpieUp()
+    TurnRight(180)
+    Forward(10)
+    SharpieDown()
+    TurnRight(90)
+    Forward(15)
+    SharpieUp()
+    TurnRight(90)
+    Forward(10)
+    SharpieDown()
+    TurnRight(135)
+    Forward(24)
+
+'''Draw a square'''
+def DrawSquare():
+    SharpieDown()
+    Forward(50)
+    TurnRight(90)
+    Forward(50)
+    TurnRight(90)
+    Forward(50)
+    TurnRight(90)
+    Forward(50)
+    TurnRight(90)
+    SharpieUp()
+    
+    
+'''Draw a Circle'''
+def DrawCircle():
+    SharpieDown()
+    for i in range(360):
+        Forward(1)
+        TurnRight(1)
+    SharpieUp()
+
+'''Draw a triangle'''
+def DrawTriangle():
+    SharpieDown()
+    Forward(50)
+    TurnRight(120)
+    Forward(50)
+    TurnRight(120)
+    Forward(50)
+    TurnRight(120)
+    SharpieUp()
+
+'''Draw a rectangle'''
+def DrawRectangle():
+    SharpieDown()
+    Forward(50)
+    TurnRight(90)
+    Forward(70)
+    TurnRight(90)
+    Forward(50)
+    TurnRight(90)
+    Forward(70)
+    TurnRight(90)
+    SharpieUp()
+
+'''Draw a star'''
+def DrawStar():
+    SharpieDown()
+    Forward(50)
+    TurnRight(144)
+    Forward(50)
+    TurnRight(144)
+    Forward(50)
+    TurnRight(144)
+    Forward(50)
+    TurnRight(144)
+    Forward(50)
+    TurnRight(144)
+    SharpieUp()
+
+
+'''Draw a heart'''
+def DrawHeart():
+    SharpieDown()
+    TurnRight(45)
+    time.sleep(1)
+    Forward(50)
+    time.sleep(1)
+    TurnRight(135)
+    time.sleep(1)
+    Forward(70)
+    time.sleep(1)
+    TurnRight(135)
+    time.sleep(1)
+    Forward(50)
+    time.sleep(1)
+    TurnRight(135)
+    time.sleep(1)
+    Forward(35)
+    time.sleep(1)
+    TurnRight(135)
+    time.sleep(1)
+    Forward(35)
+    time.sleep(1)
+    TurnRight(135)
+    time.sleep(1)
+    Forward(50)
+    time.sleep(1)
+    SharpieUp()
+
+'''Draw a sun'''
+def DrawSun():
+    SharpieDown()
+    for i in range(36):
+        Forward(10)
+        TurnRight(10)
+    SharpieUp()
+
+'''Draw a flower'''
+def DrawFlower():
+    SharpieDown()
+    for i in range(36):
+        Forward(10)
+        TurnRight(10)
+    SharpieUp()
+    Forward(50)
+    SharpieDown()
+    for i in range(36):
+        Forward(10)
+        TurnRight(10)
+    SharpieUp()
+
+'''Draw a house'''
+def DrawHouse():
+    SharpieDown()
+    Forward(50)
+    TurnRight(90)
+    Forward(70)
+    TurnRight(30)
+    Forward(50)
+    TurnRight(120)
+    Forward(50)
+    TurnRight(30)
+    Forward(70)
+    SharpieUp()
+
+'''Draw a tree'''
+def DrawTree():
+    SharpieDown()
+    Forward(50)
+    TurnRight(90)
+    Forward(70)
+    SharpieUp()
+    Forward(20)
+    SharpieDown()
+    Forward(30)
+    TurnRight(90)
+    Forward(30)
+    TurnRight(90)
+    Forward(30)
+    TurnRight(90)
+    Forward(30)
+    SharpieUp()
+
+'''Draw a mountain range'''
+def DrawMountains():
+    SharpieDown()
+    Forward(50)
+    TurnRight(45)
+    Forward(30)
+    TurnRight(90)
+    Forward(30)
+    TurnRight(45)
+    Forward(50)
+    SharpieUp()
+    Forward(30)
+    SharpieDown()
+    Forward(50)
+    TurnRight(45)
+    Forward(30)
+    TurnRight(90)
+    Forward(30)
+    TurnRight(45)
+    Forward(50)
+    SharpieUp()
+
+'''Draw a sailboat'''
+def DrawSailboat():
+    SharpieDown()
+    Forward(50)
+    TurnRight(90)
+    Forward(20)
+    TurnRight(90)
+    Forward(20)
+    TurnRight(45)
+    Forward(35)
+    TurnRight(90)
+    Forward(35)
+    SharpieUp()
+    
+'''Draw a rocket'''
+def DrawRocket():
+    SharpieDown()
+    Forward(50)
+    TurnRight(90)
+    Forward(20)
+    TurnRight(90)
+    Forward(20)
+    TurnRight(90)
+    Forward(10)
+    TurnRight(90)
+    Forward(10)
+    TurnRight(45)
+    Forward(35)
+    TurnRight(90)
+    Forward(35)
+    SharpieUp()
+
+'''Draw a spaceship'''
+def DrawSpaceship():
+    SharpieDown()
+    Forward(50)
+    TurnRight(90)
+    Forward(20)
+    TurnRight(90)
+    Forward(20)
+    TurnRight(90)
+    Forward(10)
+    TurnRight(90)
+    Forward(10)
+    TurnRight(45)
+    Forward(35)
+    TurnRight(90)
+    Forward(35)
+    SharpieUp()
+
+'''Draw a diamond'''
+def DrawDiamond():
+    SharpieDown()
+    Forward(20)
+    TurnRight(45)
+    Forward(20)
+    TurnRight(135)
+    Forward(20)
+    TurnRight(45)
+    Forward(20)
+    TurnRight(135)
+    SharpieUp()
+    def stickman():
+    # lift pen to prevent marking paper
+    SharpieUp()
+  
+    # move to starting position
+    Forward(100)
+  
+    # lower pen to begin drawing
+    SharpieDown()
+  
+    # draw first line of body
+    Forward(50)
+    TurnRight(90)
+  
+    # draw second line of body
+    Forward(100)
+    TurnRight(90)
+  
+    # draw third line of body
+    Forward(50)
+    TurnRight(90)
+  
+    # draw fourth line of body
+    Forward(50)
+    TurnRight(90)
+  
+    # draw fifth line of body
+    Forward(100)
+    TurnRight(90)
+  
+    # draw sixth line of body
+    Forward(50)
+    TurnRight(90)
+  
+    # draw seventh line of body
+    Forward(50)
+    TurnRight(90)
+  
+    # draw eighth line of body
+    Forward(100)
+    TurnRight(90)
+  
+    # draw ninth line of body
+    Forward(50)
+    TurnRight(90)
+  
+    # draw tenth line of body
+    Forward(50)
+    TurnRight(90)
+  
+    # draw eleventh line of body
+    Forward(50)
+    TurnRight(90)
+  
+    # draw twelfth line of body
+    Forward(50)
+
+# Define function to draw a turtle
+def DrawTurtle():
+    # Lower the pen to the surface
+    SharpieDown()
+
+    # Draw the head
+    Forward(50)
+    TurnRight(90)
+
+    # Draw the left eye
+    Forward(20)
+    TurnLeft(90)
+    Forward(20)
+    TurnRight(180)
+    Forward(20)
+    TurnRight(90)
+
+    # Draw the right eye
+    Forward(40)
+    TurnLeft(90)
+    Forward(20)
+    TurnRight(180)
+    Forward(20)
+    TurnRight(90)
+
+    # Draw the mouth
+    Forward(40)
+    TurnRight(90)
+    Forward(20)
+    TurnRight(90)
+    Forward(40)
+    TurnRight(90)
+    Forward(20)
+    TurnRight(90)
+
+    # Draw the body
+    Forward(50)
+    TurnRight(90)
+    Forward(100)
+    TurnRight(90)
+    Forward(100)
+    TurnRight(90)
+    Forward(100)
+    TurnRight(90)
+    Forward(50)
+
+    # Draw the left leg
+    TurnRight(45)
+    Forward(50)
+    TurnRight(90)
+    Forward(50)
+    TurnRight(180)
+    Forward(50)
+    TurnRight(90)
+    Forward(50)
+    TurnRight(135)
+
+    # Draw the right leg
+    Forward(100)
+    TurnRight(45)
+    Forward(50)
+    TurnRight(90)
+    Forward(50)
+    TurnRight(180)
+    Forward(50)     
+
+# Define function to draw the word "CET"
+def DrawCet():
+    # Lower the pen to the surface
+    SharpieDown()
+
+    # Draw the letter "C"
+    Forward(50)
+    TurnRight(135)
+    Forward(50)
+    TurnRight(180)
+    Forward(50)
+    TurnRight(135)
+
+    # Move to the next letter
+    TurnRight(90)
+    Forward(50)
+
+    # Draw the letter "E"
+    Forward(50)
+    TurnRight(180)
+    Forward(50)
+    TurnRight(90)
+    Forward(50)
+    TurnRight(45)
+    Forward(50)
+    TurnRight(180)
+    Forward(50)
+
+    TurnRight(45)
+    Forward(50)
+
+    # Move to the next letter
+    TurnRight(90)
+    Forward(50)
+
+    # Draw the letter "T"
+    Forward(50)
+    TurnRight(180)
+    Forward(50)
+    TurnRight(90)
+    Forward(50)
+       
+</code>
+</pre>    
+
+
+
+</div>
+</body>
+</html>
