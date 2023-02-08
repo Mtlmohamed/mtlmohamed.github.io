@@ -191,3 +191,11 @@ pre {
   padding: 10px;
 }
 
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: black;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: small;
+  color: white;
+}
