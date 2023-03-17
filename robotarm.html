@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="Pictures/icon.png">
+    <link rel="stylesheet" href="styles.css">
+<title>Sharafath</title>
+</head>
+<html lang="en-US">
+<body>
+    <header class="header">
+        <ul>
+            <a href="about.html" title="Learn more about me">About Me</a>
+            <a href="blog.html" title="Read my blog">Blog</a>
+            <a href="home.html"title="Go back to the homepage">Home</a>
+          </ul>
+      </header>
+<div id="body">
+<h1 class="title">Robot Arm Lab </h1>
+
+
+<footer class="footer">
+  <h3 class="social">Linkedin:&nbsp <a href="https://www.linkedin.com/in/mohamed-sharafath-shahul-hameed-670090213/" target="_blank"title="View my Linkedin">Mohamed Sharafath</a></h3>
+  <h3 class="social">Email:&nbsp<a href="mailto:Sharafath2001@hotmail.com"target="_blank"title="Send an Email">Sharafath2001@hotmail.com<a></h3></social-list>
+</footer>
+
+<script>
+  var footer = document.querySelector('.footer');
+
+  window.addEventListener('scroll', function() {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+      footer.classList.add('visible');
+    } else {
+      footer.classList.remove('visible');
+    }
+  });
+</script>
+</body>
+</html>
